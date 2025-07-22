@@ -1,37 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 作業ログ
 
-## Getting Started
+## 2025-07-21
 
-First, run the development server:
+- Next.jsブログのMarkdown記事読み込み機能を実装
+- `lib/posts.ts`でMarkdownファイルのメタ情報取得とHTML変換を実装
+- 個別記事ページ（`app/blog/[slug]/page.tsx`）でMarkdown → HTMLを表示できるように修正
+- ブログ一覧ページ（`app/page.tsx`）を作成し、記事のタイトルやメタ情報を一覧表示
+- Markdownファイルのディレクトリパスやファイル名に関するエラーを解決
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 2025-07-22
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# tech-blog
+- Markdownの内容をHTMLに変換し、個別記事ページで本文を読みやすく表示する仕組みを完成
+- ブログ一覧ページにカテゴリ・タグ・日付情報をわかりやすく表示
+- `getAllPostsMeta`関数の戻り値にカテゴリ・タグも含めるように拡張し、一覧表示を改善
+- `dangerouslySetInnerHTML`を使って記事本文のHTMLを安全にレンダリング
+- 投稿データの型定義を整備し、TypeScriptエラーを修正
+- Markdownファイルのサンプル（`hello-world.md`）を作成し、ブログの動作確認を実施
